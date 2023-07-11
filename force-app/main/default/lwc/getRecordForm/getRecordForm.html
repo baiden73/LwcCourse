@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Contact Information" icon-name="standard:contact">
+        <template lwc:if={contact.data}>
+            <p>Name: {contact.data.fields.Name.value}</p>
+            <p>Title: {title}</p>
+            <p>Phone: {phone}</p>
+            <p>Email: {email}</p>
+        </template>
+        <template lwc:elseif={contact.error}>
+            <p>Error retrieving record returned.</p>
+        </template>
+        <template lwc:else>
+            <p>No Contact Record returned.</p>
+        </template>
+    </lightning-card>
+</template>
